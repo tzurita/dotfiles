@@ -1,0 +1,22 @@
+alias au='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y'
+alias cts="multi-tssh < ~/bin/mirrorhosts"
+alias h="history"
+alias pd="pushd"
+alias pop="popd"
+alias rvim='sudo vim'
+alias sat='ssh si-satellite'
+alias swork='ssh work'
+alias vi='nvim'
+alias vik="vi ~/.ssh/known_hosts"
+
+# Ansible Git
+# alias cdsi="pd ~/git/si-ansible"
+# alias spull="cdsi && git pull && pop"
+# alias sci="cdsi && git add -A . && git ci && pop"
+# alias spush="cdsi && git push && pop"
+
+# Ansible:
+# alias apl="ansible-playbook"
+
+# Git repos:
+alias all_pull="pd ~/git ; for d in */ ; do cd \$d && git pull && cd .. ; done ; pop"

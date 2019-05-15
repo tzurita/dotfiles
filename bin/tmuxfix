@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# tmuxfix
+# Copyright (C) 2018 zuritat <tzurita@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+
+FILE=/home/zuritat/.tmux/plugins/tmux-onedark-theme/tmux-onedark-theme.tmux
+sed -i -e 's/\(^set.*window-style.*comment_grey\),.*/\1"/ ; s/\(^set.*window-active-style.*onedark_white\),.*/\1"/' $FILE

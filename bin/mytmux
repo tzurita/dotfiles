@@ -1,0 +1,9 @@
+tmux new -s Main -n Borg-X1 \; \
+    split-window -h -p 30 'vtop' \; \
+    select-pane -t 1 \; \
+    split-window -v -p 75 \; \
+    neww -n Sat \; \
+    send-keys 'sat' C-m \; \
+    neww -n Coding \; \
+    selectw -t Borg-X1 \; \
+    select-pane -t 0

@@ -1,0 +1,39 @@
+#! /bin/bash
+#
+# ansdir.sh
+# Copyright (C) 2018 zuritat <tzurita@gmail.com>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+
+simple () {
+mkdir -p group_vars host_vars library module_utils filter_plugins inventories plays
+mkdir -p roles/common/{tasks,handlers,templates,files,vars,defaults,meta,library,module_utils,lookup_plugins}
+touch inventories/{production,staging} site.yml roles/common/{tasks,handlers,templates,files,vars,defaults,meta}/main.yml
+}
+
+
+complex () {
+mkdir -p inventories/{production,staging}/{group_vars,host_vars}
+touch inventories/{production,staging}/hosts
+mkdir -p group_vars host_vars library module_utils filter_plugins inventories plays
+mkdir -p roles/common/{tasks,handlers,templates,files,vars,defaults,meta,library,module_utils,lookup_plugins}
+touch inventories/{production,staging} site.yml roles/common/{tasks,handlers,templates,files,vars,defaults,meta}/main.yml
+}
+
+
+if [ $# -ne 1 ]
+then
+    echo "You must use one of the following arguments: simple or complex"
+elif [ "$1" = "simple" ]
+then
+    simple
+elif [ "$1" = "complex" ]
+then
+    complex
+else [ "$1" != "simple" ] || [ "$1" != "complex" ]
+    echo "You may only use one of the following arguments: simple or complex"
+    exit
+fi

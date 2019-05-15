@@ -1,0 +1,27 @@
+git config --global user.name "Tom Zurita"
+git config --global user.email tzurita@gmail.com
+git config --global github.user tzurita
+git config --global core.pager less
+git config --global color.branch auto
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch.current "yellow reverse"
+git config --global color.branch.local yellow
+git config --global color.branch.remote green
+git config --global color.diff.meta "yellow bold"
+git config --global color.diff.frag "magenta bold"
+git config --global color.diff.old "red bold"
+git config --global color.diff.new "green bold"
+git config --global color.status.added yellow
+git config --global color.status.changed green
+git config --global color.status.untracked cyan
+git config --global merge.tool vimdiff
+git config --global branch.autosetupmerge true
+git config --global alias.co checkout
+git config --global alias.st "status -s"
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --global alias.ls ls-files
+git config --global rerere.enabled 1
+git config --global pull.rebase true
+git config --global push.default current
