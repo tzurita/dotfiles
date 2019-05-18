@@ -42,8 +42,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Shougo/denite.nvim'
 
 " Snippet support
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet-snippets'
 
 " Print function signatures in echo area
 Plug 'Shougo/echodoc.vim'
