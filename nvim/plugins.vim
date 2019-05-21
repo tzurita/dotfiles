@@ -20,6 +20,10 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+" === DEBUGGING === "
+" let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
+" let $NVIM_COC_LOG_LEVEL = 'debug'
+
 " === Editing Plugins === "
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
