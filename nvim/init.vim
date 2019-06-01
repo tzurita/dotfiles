@@ -257,8 +257,8 @@ augroup END
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
 
-" Set preview window to appear at bottom
-set splitbelow
+" Set preview window to appear at bottom and right
+set splitbelow splitright
 
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
@@ -367,10 +367,6 @@ nmap <leader>z :JsDoc<CR>
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
-" Remove trailing spaces
-nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
@@ -388,8 +384,8 @@ set smartcase
 " Automatically re-read file if a change was detected outside of vim
 set autoread
 
-" Enable line numbers
-set number
+" Enable line numbers - relative
+set relativenumber
 
 " Set backups
 if has('persistent_undo')
