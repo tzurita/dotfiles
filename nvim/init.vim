@@ -257,8 +257,8 @@ augroup END
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
 
-" Set preview window to appear at bottom and right
-set splitbelow splitright
+" Set preview window to appear at bottom
+set splitbelow
 
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
@@ -367,6 +367,10 @@ nmap <leader>z :JsDoc<CR>
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
+" Remove trailing spaces
+nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
@@ -384,8 +388,8 @@ set smartcase
 " Automatically re-read file if a change was detected outside of vim
 set autoread
 
-" Enable line numbers - relative
-set relativenumber
+" Enable line numbers
+set number
 
 " Set backups
 if has('persistent_undo')
@@ -401,3 +405,27 @@ set noswapfile
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
+
+" .............................................................................
+" junegunn/limelight.vim
+" .............................................................................
+
+let g:limelight_conceal_ctermfg = 245  " Solarized Base1
+let g:limelight_conceal_guifg = '#8a8a8a'  " Solarized Base1
+
+" .............................................................................
+" plasticboy/vim-markdown
+" .............................................................................
+
+autocmd FileType markdown let b:sleuth_automatic=0
+autocmd FileType markdown set conceallevel=0
+autocmd FileType markdown normal zR
+
+let g:vim_markdown_frontmatter=1
+
+" .............................................................................
+" iamcco/markdown-preview.nvim
+" .............................................................................
+
+let g:mkdp_refresh_slow=1
+" let g:mkdp_markdown_css='/home/nick/.local/lib/github-markdown-css/github-markdown.css'
