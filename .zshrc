@@ -100,14 +100,10 @@ fgr() {
   fi
 }
 
-# Delete a given line number in the known_hosts file.
+# Delete a known host and IP from known_hosts file.
 knownrm() {
-  re='^[0-9]+$'
-  if ! [[ $1 =~ $re ]] ; then
-    echo "error: line number missing" >&2;
-  else
-    sed -i '' "$1d" ~/.ssh/known_hosts
-  fi
+  ssh-keygen -R $1
+  ssh-keygen -R $(dig $1 +short)
 
 # Set default editor to nvim
 export EDITOR='nvim'
