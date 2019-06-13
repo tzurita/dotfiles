@@ -100,6 +100,15 @@ fgr() {
   fi
 }
 
+# Delete a given line number in the known_hosts file.
+knownrm() {
+  re='^[0-9]+$'
+  if ! [[ $1 =~ $re ]] ; then
+    echo "error: line number missing" >&2;
+  else
+    sed -i '' "$1d" ~/.ssh/known_hosts
+  fi
+
 # Set default editor to nvim
 export EDITOR='nvim'
 
@@ -114,6 +123,7 @@ then
     source ~/.aliases
 fi
 
-export PATH=$HOME/bin:/usr/local/git/bin:$PATH:$HOME/.npm-global/bin:$HOME/.local/bin
+unset PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/git/bin:$PATH:$HOME/.npm-global/bin:$HOME/.local/bin:/home/zuritat/.gem/ruby/2.6.0/bin:/var/lib/flatpak/exports/bin:$HOME/.cargo/bin
 alias ls="colorls -l --sd"
 alias la="colorls -lA --sd"

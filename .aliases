@@ -16,7 +16,8 @@ alias vik="vi ~/.ssh/known_hosts"
 # alias spush="cdsi && git push && pop"
 
 # Ansible:
-# alias apl="ansible-playbook"
+alias apl="ansible-playbook"
+alias cdsi="cd ~/git/si-ansible"
 
 # Git repos:
 alias all_pull="pd ~/git ; for d in */ ; do cd \$d && git pull && cd .. ; done ; pop"
