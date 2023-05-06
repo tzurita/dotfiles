@@ -1,0 +1,6 @@
+tmux new -s Main -n Borg-X1 \; \
+    neww -n Sat \; \
+    send-keys 'sat' C-m \; \
+    neww -n Coding \; \
+    selectw -t Borg-X1 \; \
+    select-pane -t 0

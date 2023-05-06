@@ -59,3 +59,25 @@ alias \
 	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_CACHE_HOME:-$HOME/.cache}/weatherreport" \
+
+# Tom's Extra Stuff
+alias \
+	apl="ansible-playbook" \
+        azcli="docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli" \
+        br="sudo lsof +c 0 | grep -w 'DEL.*lib' | awk '{print \$1}' | sort -u" \
+        cat="bat" \
+        cdg="cd $HOME/repos" \
+        cdsi="cd $HOME/repos/si-ansible" \
+        conky="conky --config=${XDG_CONFIG_HOME:-$HOME/.config}/conky/conky.conf" \
+        cpa="scp si-satellite.si.edu:/etc/ansible/hosts . ; sudo cp hosts /etc/ansible/hosts ; rm hosts" \
+        gpa='find ~ -name ".git" -type d -exec bash -c "echo '{}' && cd '{}'/.. && git pull" \;' \
+        la="exa -arlg --time-style=long-iso --group-directories-first --icons -m -sold" \
+        ls="exa -rlg --time-style=long-iso --group-directories-first --icons -m -sold" \
+        ll="exa -rlg --time-style=long-iso --group-directories-first --icons -m -sold" \
+        lt="exa -rltg --time-style=long-iso --group-directories-first --icons -m -sold" \
+        rvim="sudo nvim" \
+        sat="ssh si-satellite" \
+        swork="ssh work" \
+        tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+        vtop="vtop --theme=gruvbox" \
+        yarn="yarn --use-yarnrc ${XDG_CONFIG_HOME:-$HOME/.config}/yarn/config"
