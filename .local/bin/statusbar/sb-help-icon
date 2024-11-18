@@ -14,4 +14,4 @@ case $BLOCK_BUTTON in
 	3) notify-send "❓ Help module" "\- Left click to open TARBS guide.
 - Middle click to refresh window manager." ;;
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
-esac; echo "❓"
+esac; echo ""
