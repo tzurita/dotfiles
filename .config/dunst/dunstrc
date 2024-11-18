@@ -1,27 +1,38 @@
 [global]
     monitor = 0
     follow = keyboard
+#    geometry = "1200x50-30+30"
     width = 370
     height = 350
     offset = 0x19
+    font = Monospace 12
+    format = "%s"
+    separator_block_width = 0
+    transparency = 25
     padding = 2
     horizontal_padding = 2
-    transparency = 25
-    font = Monospace 12
+    separator_colour = "#282c34"
     format = "<b>%s</b>\n%b"
 
+[frame]
+    width = 300
+    height = 50
+    background = "#282c34"
+    foreground = "#bbc2cf"
+    shadow_width = 0
+    shadow_color = "#1d2026"
+
 [urgency_low]
-    background = "#1d2021"
-    foreground = "#928374"
-    timeout = 3
+    background = "#282c34"
+    foreground = "#bbc2cf"
+    timeout = 2
 
 [urgency_normal]
-    foreground = "#ebdbb2"
-    background = "#458588"
+    background = "#282c34"
+    foreground = "#bbc2cf"
     timeout = 5
 
 [urgency_critical]
-    background = "#1cc24d"
-    foreground = "#ebdbb2"
-    frame_color = "#fabd2f"
+    background = "#ff6c6b"
+    foreground = "#1d2026"
     timeout = 10
