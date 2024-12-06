@@ -24,6 +24,7 @@ alias \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	bc="bc -ql" \
+	rmr="rm -f $HOME/Downloads/launch*" \
 	rsync="rsync -vrPlu" \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
@@ -74,6 +75,7 @@ alias \
         ls="exa -rlg --time-style=long-iso --group-directories-first --icons -m -sold" \
         ll="exa -rlg --time-style=long-iso --group-directories-first --icons -m -sold" \
         lt="exa -rltg --time-style=long-iso --group-directories-first --icons -m -sold" \
+        rmr="rm -f $HOME/Downloads/launch*" \
         rvim="sudo nvim" \
         sat="ssh si-satellite" \
         swork="ssh work" \
