@@ -75,7 +75,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # FZF Stuff
-export BAT_THEME='gruvbox-dark'
+export BAT_THEME='Doom One'
 export FZF_BASE='/usr/share/fzf'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{node_modules,.git}" 2>/dev/null'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow -g  "!{nose_modules,.git}" 2>/dev/null'
@@ -107,6 +107,20 @@ bindkey '^e' edit-command-line
 bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
+
+# Launch Windows using xfreerdp when Remmina is giving issues
+win() {
+  local directory="$HOME/Downloads"  # Set directory to ~/Downloads
+
+  # Find all RDP files, sort by modification time (oldest first), and delete all but the last one
+  find "$directory" -name "*.rdp" -type f -printf "%T@ %p\n" | sort -n | head -n -1 | cut -d ' ' -f 2- | xargs rm -f
+
+  # Get the latest RDP file
+  latest_file=$(find "$directory" -name "*.rdp" -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -d ' ' -f 2-)
+
+  # Connect to the latest RDP file using xfreerdp3
+  xfreerdp3 "$latest_file" /dynamic-resolution /cert:ignore /d:us /auto-reconnect /audio-mode:0 /drive:disable /printer:disable /usb:disable /microphone:disable
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
