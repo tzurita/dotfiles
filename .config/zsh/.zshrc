@@ -75,7 +75,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # FZF Stuff
-export BAT_THEME='Doom One'
+export BAT_THEME='doom-one'
 export FZF_BASE='/usr/share/fzf'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!{node_modules,.git}" 2>/dev/null'
 export FZF_CTRL_T_COMMAND='rg --files --hidden --follow -g  "!{nose_modules,.git}" 2>/dev/null'
